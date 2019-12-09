@@ -330,14 +330,7 @@ class SqlDbConnection():
                 cursor.execute(sql, params)
             else:
                 cursor.execute(sql)
-        except (pgProgrammingError,
-                mysqlProgrammingError, mysqlInternalError,
-                oracleDatabaseError,
-                mssqlOperationalError, mssqlInterfaceError, mssqlDataError,
-                mssqlProgrammingError, mssqlIntegrityError,
-                sqliteOperationalError, sqliteInterfaceError, sqliteDataError,
-                socket.timeout,
-                ValueError) as ex:  # something wrong with SQL
+        except Exception as ex:  # something wrong with SQL
             if TRACESQLFILE:
                 with io.open(TRACESQLFILE, "a", encoding='utf-8') as fh:
                     fh.write("\n\n>>> EXCEPTION {} error {}\n sql {}\n"

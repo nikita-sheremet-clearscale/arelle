@@ -314,7 +314,7 @@ class Cntlr:
                               level=logging.ERROR, messageCode="arelle:logLevel")
             self.logger.messageCodeFilter = None
             self.logger.messageLevelFilter = None
-            self.logHandler.logTextMaxLength = (logTextMaxLength or LOG_TEXT_MAX_LENGTH)
+            # self.logHandler.logTextMaxLength = (logTextMaxLength or LOG_TEXT_MAX_LENGTH)
                 
     def setLogLevelFilter(self, logLevelFilter):
         if self.logger:
