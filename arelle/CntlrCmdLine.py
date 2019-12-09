@@ -581,7 +581,8 @@ class CntlrCmdLine(Cntlr.Cntlr):
                         if moduleInfo:
                             resetPlugins = True
                     if moduleInfo: 
-                        self.addToLog(_("Activation of plug-in {0} successful, version {1}.").format(moduleInfo.get("name"), moduleInfo.get("version")), 
+                        print("Activation of plug-in print")
+                        self.addToLog(_("Activation of plug-in {0} successful, version {1}.").format(moduleInfo.get("name"), moduleInfo.get("version")),
                                       messageCode="info", file=moduleInfo.get("moduleURL"))
                     else:
                         self.addToLog(_("Unable to load \"%(name)s\" as a plug-in or \"%(name)s\" is not recognized as a plugin command. "),
