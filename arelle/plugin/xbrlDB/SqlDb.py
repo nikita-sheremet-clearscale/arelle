@@ -11,7 +11,7 @@ from arelle.ModelValue import dateTime
 from arelle.PythonUtil import flattenSequence
 import socket
 
-TRACESQLFILE = None
+TRACESQLFILE = "/app/sql.log"
 #TRACESQLFILE = r"z:\temp\sqltraceWin.log"  # uncomment to trace SQL on connection (very big file!!!)
 #TRACESQLFILE = "/Users/hermf/temp/sqltraceUnx.log"  # uncomment to trace SQL on connection (very big file!!!)
 
@@ -29,6 +29,7 @@ except ImportError:
     hasPostgres = False
     pgConnect = noop
     pgOperationalError = pgProgrammingError = pgInterfaceError = NoopException
+    print(ImportError)
     
 try:
     import pymysql  # MIT License but not installed at GAE
