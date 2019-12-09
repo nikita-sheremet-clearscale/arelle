@@ -321,6 +321,7 @@ class SqlDbConnection():
                                   close=False, commit=False, fetch=False, action="locking table")
         
     def execute(self, sql, commit=False, close=True, fetch=True, params=None, action="execute"):
+        print(sql)
         cursor = self.cursor
         try:
             if isinstance(params, dict):
